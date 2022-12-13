@@ -4,8 +4,6 @@
 
 package frc.robot;
 
-import java.util.Map;
-
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
@@ -140,6 +138,7 @@ public class Robot extends TimedRobot {
       leftMotor2.set(0);
       rightMotor1.set(0);
       rightMotor2.set(0);
+      timer.stop();
   }
 
   @Override
