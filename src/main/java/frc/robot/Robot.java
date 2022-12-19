@@ -152,9 +152,12 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    // boolean shoot = false;
-    // int i = 1;
-    //while (i == 1) { 
+    z =stick.getZ();
+    z2 = (z * z) / 1024;
+    y= stick.getY();
+    y2 = (y * y) / 1024;
+    driveTrain.arcadeDrive(z2 , y2);
+
     if(stick.getRawButtonPressed(12)){
       pcmCompressor.disable();
       
@@ -164,15 +167,6 @@ public class Robot extends TimedRobot {
       pcmCompressor.enableDigital();
       
     }
-    
-    //driveTrain joystick position
-    driveTrain.arcadeDrive(stick.getZ() * (0.7) , stick.getY());
-  /*
-  if (stick.getThrottle() < 0.2) {
-    shooter.set(stick.getThrottle());
-    //shooter slider kısmına ayarlanıyor 
-  }
-  */
 
     if(stick.getRawButtonPressed(1))
     {
