@@ -152,11 +152,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    z =stick.getZ();
-    z2 = (z * z) / 1024;
-    y= stick.getY();
-    y2 = (y * y) / 1024;
-    driveTrain.arcadeDrive(z2 , y2);
+    driveTrain.arcadeDrive(stick.getZ() * (0.7) , stick.getY());
 
     if(stick.getRawButtonPressed(12)){
       pcmCompressor.disable();
